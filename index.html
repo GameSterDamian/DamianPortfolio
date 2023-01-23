@@ -46,85 +46,107 @@
 
 <!-- Typing Effect Start -->
 
-    <head>
-    
-    <style>
-    #typing-text {
-      width: 500px;
-      height: 30px;
-      font-size: 15px;
-      border: solid 1px #C9C9C9;
-      color: #000000;
-      background-color: #FFFFFF;
-      text-align: left;
-      font-family: 'Noto Serif Toto', serif;
-      font-weight: bold;
-      padding: 5px;
-      resize: none;
-      outline: none;
-      box-sizing: border-box;
-    }
-    </style>
-    </head>
-    <body>
-    <textarea id="typing-text" readonly></textarea>
-    
-    <script>
-    (() => {
-      let TypingSpeed = 75;
-      let NxtMsgDelay = 1750;
-      let CharacterPos = 0;
-      let MsgBuffer = "";
-      let MsgIndex = 0;
-      let delay;
-      let id = document.getElementById("typing-text");
-      let messages =
-    [
-      "make videos.",
-      "cook.",
-      "make music.",
-      "code.",
-      "make games.",
-      "bike.",
-      "make animations.",
-      "write.",
-      "play video games."
-    ]
-    
-      // https://www.html-code-generator.com/html/typewriter-text-scroller
-      const StartTyping = () => {
-        if (CharacterPos != messages[MsgIndex].length) {
-          MsgBuffer += messages[MsgIndex].charAt(CharacterPos);
-          id.value = MsgBuffer+(CharacterPos != messages[MsgIndex].length-1 ? "_":"");
-          delay = TypingSpeed;
-          id.scrollTop = id.scrollHeight; 
-        } else {
-          delay = NxtMsgDelay;
-          MsgBuffer   = "";
-          CharacterPos = -1;
-          if (MsgIndex!= messages.length-1){
-            MsgIndex++;
-          }else {
-            MsgIndex = 0;
-          }
-        }
-        CharacterPos++;
-        setTimeout(StartTyping, delay);
-      }
-      StartTyping();
-    })();
-    
-    </script>
-    
-    </body>
-    </html>
+<!-- CSS-->
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Noto Serif Toto', serif;
+  background-color: #000;
+  color: #eee;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container p {
+  font-size: 3rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.container p span.typed-text {
+  font-weight: normal;
+  color: #dd7732;
+}
+.container p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.container p span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #ccc; }
+}
+</style>
+
+<!--JavaScript-->
+<script>
+const typedTextSpan = document.querySelector(".typed-text");
+const cursorSpan = document.querySelector(".cursor");
+
+const textArray = ["hard", "fun", "a journey", "LIFE"];
+const typingDelay = 200;
+const erasingDelay = 100;
+const newTextDelay = 2000; // Delay between current and next text
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function type() {
+  if (charIndex < textArray[textArrayIndex].length) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+  	setTimeout(erase, newTextDelay);
+  }
+}
+
+function erase() {
+	if (charIndex > 0) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+    textArrayIndex++;
+    if(textArrayIndex>=textArray.length) textArrayIndex=0;
+    setTimeout(type, typingDelay + 1100);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+  if(textArray.length) setTimeout(type, newTextDelay + 250);
+});
+</script>
 
 <!-- Typing Effect End -->
 
 <p>
     <body>
     <font color="green">
-    <big>My name is <em><u><b>Damian Wood</b></u></em>. I love to <div class="typing-text"></div></big>
+    <big>My name is <em><u><b>Damian Wood</b></u></em>. I love to   <div class="container"><span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+    </div></big>
 
 <head>
 <title>Damian Wood | Home</title>
