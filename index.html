@@ -54,12 +54,12 @@
 <font color="purple">
 <style>
 
-.slide-in-top {
-	-webkit-animation: slide-in-top 0.75s ease-in-out both;
-	        animation: slide-in-top 0.75s ease-in-out both;
+.textanimation {
+	-webkit-animation: textanimation 0.75s ease-in-out both;
+	        animation: textanimation 0.75s ease-in-out both;
 }
 
- @-webkit-keyframes slide-in-top {
+ @-webkit-keyframes textanimation {
   0% {
     -webkit-transform: translateY(-1000px);
             transform: translateY(-1000px);
@@ -71,7 +71,7 @@
     opacity: 1;
   }
 }
-@keyframes slide-in-top {
+@keyframes textanimation {
   0% {
     -webkit-transform: translateY(-1000px);
             transform: translateY(-1000px);
@@ -82,11 +82,16 @@
             transform: translateY(0);
     opacity: 1;
   }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 </style>
-<h1 class="slide-in-top">
-<big><center>Hey! I'm <em><u><b>Damian</b></u></em>.</center></big>
+<h1 class="textanimation">
+<center>Hey! I'm <em><u><b>Damian</b></u></em>.</center>
 </h1>
 <body bgcolor="#f7c8c8">
 <body>
