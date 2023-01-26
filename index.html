@@ -52,8 +52,10 @@
 </head>
 <body>
 <font color="purple">
-<style>
 
+<!-- Start of drop in effect -->
+
+<style>
 .textanimation {
 	-webkit-animation: textanimation 0.75s ease-in-out both;
 	        animation: textanimation 0.75s ease-in-out both;
@@ -88,8 +90,53 @@
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+</style>
+
+<!-- End of drop in effect -->
+
+<!-- Start of 3d text pop up effect -->
+<style>
+.text-pop-up {
+	-webkit-animation: text-pop-up 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: text-pop-up 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+ @-webkit-keyframes text-pop-up {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    text-shadow: none;
+  }
+  100% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+@keyframes text-pop-up {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    text-shadow: none;
+  }
+  100% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
+  }
+}
 
 </style>
+<!-- Start of 3d text pop up effect -->
+
 <h1 class="textanimation">
 <center>Hey! I'm <em><u><b>Damian</b></u></em>.</center>
 </h1>
