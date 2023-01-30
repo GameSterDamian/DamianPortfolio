@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Toto" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Serif Toto', serif;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #4437FA;
+    }
+    
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: #5204aa;
+      color: #adfb55;
+    }
+    
+    .topnav a.active {
+      background-color: #5204aa;
+      color: #adfb55;
+    }
+    </style>
+    </head>
+    <body>
+    
+    <div class="topnav">
+      <a href="/damianportfolio">Home</a>
+      <a href="/damianportfolio/about">About Me</a>
+      <a href="/damianportfolio/projects">Projects</a>
+      <a class="active" href="/damianportfolio/contact">Contact</a>
+    </div>
+    
+    </body>
+
+<title>Damian W | Contact</title>
+<body bgcolor="#c8f7e9"</body>
+
+</html>
