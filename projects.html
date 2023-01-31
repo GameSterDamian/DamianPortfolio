@@ -52,7 +52,7 @@
 <body><h1><font color="purple"><center>My Projects</em></b></h1>
 <p>
 <big>This page contains some of my most notable projects. Not all of the projects I've done are listed here, the purpose of this page is to give you some examples of the things I can do, and so I can come back and look at this in a few years and remember all the cool things I've done.</big>
-<hr color="darkorange" size="5">
+<hr color="darkblue" size="5">
 <head>
   <font color="purple">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,12 +62,18 @@
   }
   
   /* Create three equal columns that floats next to each other */
+  @media (max-width: 700px) {
   .column {
+    float: left;
+    width: 100%;
+    padding: 10px;
+  }
+}
+.column {
     float: left;
     width: 33.33%;
     padding: 10px;
-  }
-  
+}
   /* Clear floats after the columns */
   .row:after {
     content: "";
