@@ -4,7 +4,6 @@ Hey. This is my portfolio website. If you want, you can suggest things. This web
 
 
 Add this in your footer to credit me:
-"Website made by GameSterDamian
-gamesterdamian.github.io/damianportfolio"
+"<center>Website created by <a href="https://gamesterdamian.github.io/damianportfolio/">Damian W</a></center>"
 
 Live at: https://gamesterdamian.github.io/damianportfolio
